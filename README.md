@@ -9,7 +9,7 @@ npm run dev
 ```
 
 ## Deploy to GitHub Pages
-Push to the `master` branch to build and deploy the site with GitHub Actions. The deployment workflow switches GitHub Pages to Actions publishing to prevent the old branch publisher from overwriting the built site. The deployed site will be available at `https://joshuajam88.github.io/The-Academy-By-DOA/`.
+In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions** once. GitHub requires an administrator to change this setting. Afterward, every push to `master` builds and deploys the site automatically. The deployed site will be available at `https://joshuajam88.github.io/The-Academy-By-DOA/`.
 
 To enable Supabase sign-up and enrollment on the deployed site, add `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` as Actions variables or secrets in the repository settings. Without them, the site still builds and displays, but Supabase-backed forms are unavailable.
 
