@@ -6,6 +6,8 @@ import 'leaflet/dist/leaflet.css';
 import { supabase } from './lib/supabase';
 import logo from "./images/DOA-LOGO-transparent.png";
 
+const publicImages = `${import.meta.env.BASE_URL}images/`;
+
 const academy = {
   founder: { name: 'DanielOwoAbasi.', title: 'Founder & Lead Mentor', bio: 'The Academy By DOA exists to help young people turn potential into professional excellence through practical business education, career development, leadership and mentorship.' },
 
@@ -257,7 +259,7 @@ function App() {
         </div>
         <div className="hero-founder-card">
           <div className="founder-hero">
-            <img src="/images/founder.svg" alt="Founder" />
+            <img src={`${publicImages}founder.svg`} alt="Founder" />
           </div>
           <div className="founder-caption">
             <span>Meet the Founder</span>
@@ -274,10 +276,10 @@ function App() {
         <div className="about-layout">
           <div className="about-image-grid">
             <div className="about-main-image">
-              <img src="/images/about-1.svg" alt="Learning session" />
+              <img src={`${publicImages}about-1.svg`} alt="Learning session" />
             </div>
             <div className="about-small">
-              <img src="/images/about-2.svg" alt="Students" />
+              <img src={`${publicImages}about-2.svg`} alt="Students" />
             </div>
             <div className="quote-card">
               “Education becomes powerful when young people can apply it.”
@@ -286,13 +288,13 @@ function App() {
           <div className="feature-list">
             <Feature title="Purpose-led learning" text="Learning pathways connected to real-world outcomes." /><Feature title="Career readiness" text="Professional communication, CVs, interviews and workplace skills." /><Feature title="Business mindset" text="Entrepreneurship, strategy, financial thinking and problem solving." /></div></div></Section>
 
-      <section id="cohort" className="section cohort-section"><div className="section-heading center"><span className="eyebrow">Cohorts</span><h2>Learn together. Grow together.</h2><p>Follow the current learning journey and see what is coming next.</p></div><div className="cohort-grid"><article className="cohort-card"><div className="cohort-photo"><img src="/images/cohort-1.svg" alt="Cohort 1" /><span>ONGOING</span></div><div className="cohort-content"><small>COHORT 01</small><h3>Professional Foundations</h3><p>Business, career readiness, leadership, communication and practical project work.</p><div className="progress"><i /></div><b>Currently in session</b></div></article><article className="cohort-card"><div className="cohort-photo"><img src="/images/cohort-2.svg" alt="Cohort 2" /><div className="coming-overlay">COMING SOON</div></div><div className="cohort-content"><small>COHORT 02</small><h3>Next Generation Professionals</h3><p>Registration details and program dates will be announced soon.</p><button className="outline-btn" onClick={() => setSignup(true)}>Join interest list <ArrowRight size={16} /></button></div></article></div></section>
+      <section id="cohort" className="section cohort-section"><div className="section-heading center"><span className="eyebrow">Cohorts</span><h2>Learn together. Grow together.</h2><p>Follow the current learning journey and see what is coming next.</p></div><div className="cohort-grid"><article className="cohort-card"><div className="cohort-photo"><img src={`${publicImages}cohort-1.svg`} alt="Cohort 1" /><span>ONGOING</span></div><div className="cohort-content"><small>COHORT 01</small><h3>Professional Foundations</h3><p>Business, career readiness, leadership, communication and practical project work.</p><div className="progress"><i /></div><b>Currently in session</b></div></article><article className="cohort-card"><div className="cohort-photo"><img src={`${publicImages}cohort-2.svg`} alt="Cohort 2" /><div className="coming-overlay">COMING SOON</div></div><div className="cohort-content"><small>COHORT 02</small><h3>Next Generation Professionals</h3><p>Registration details and program dates will be announced soon.</p><button className="outline-btn" onClick={() => setSignup(true)}>Join interest list <ArrowRight size={16} /></button></div></article></div></section>
 
       <Section id="programs" eyebrow="What we offer" title="Skills that travel with you" text="Learning experiences designed around the professional realities young people face."><div className="program-grid">{programs.map(([title, text, Icon]) => <article className="program-card" key={title}><div className="program-icon"><Icon /></div><h3>{title}</h3><p>{text}</p><button>Learn more <ArrowRight size={15} /></button></article>)}</div></Section>
 
-      <Section id="founder" eyebrow="Founder’s message" title="A mission built around young people's potential" text={academy.founder.bio}><div className="founder-section"><div className="founder-large-image"><img src="/images/founder.svg" alt="Founder portrait" /></div><div className="founder-story"><h3>Young people do not need only information. They need direction, practice and people who believe in their potential.</h3><div className="signature"><b>{academy.founder.name}</b><span>{academy.founder.title}</span></div></div></div></Section>
+      <Section id="founder" eyebrow="Founder’s message" title="A mission built around young people's potential" text={academy.founder.bio}><div className="founder-section"><div className="founder-large-image"><img src={`${publicImages}founder.svg`} alt="Founder portrait" /></div><div className="founder-story"><h3>Young people do not need only information. They need direction, practice and people who believe in their potential.</h3><div className="signature"><b>{academy.founder.name}</b><span>{academy.founder.title}</span></div></div></div></Section>
 
-      <Section id="gallery" eyebrow="Life at DOA" title="Moments from the academy" text="A flexible image gallery for academy activities, classes and events."><div className="masonry">{imgs.map((x, i) => <div className={'gallery-item g' + i % 4} key={x}><img src={'/images/' + x + '.svg'} alt="DOA Academy activity" /><div><span>DOA ACADEMY</span><h4>{['Leadership Lab', 'Business Strategy', 'Career Mentorship', 'Team Collaboration', 'Presentation Day', 'Young Professionals'][i]}</h4></div></div>)}</div></Section>
+      <Section id="gallery" eyebrow="Life at DOA" title="Moments from the academy" text="A flexible image gallery for academy activities, classes and events."><div className="masonry">{imgs.map((x, i) => <div className={'gallery-item g' + i % 4} key={x}><img src={`${publicImages}${x}.svg`} alt="DOA Academy activity" /><div><span>DOA ACADEMY</span><h4>{['Leadership Lab', 'Business Strategy', 'Career Mentorship', 'Team Collaboration', 'Presentation Day', 'Young Professionals'][i]}</h4></div></div>)}</div></Section>
 
       <Section id="updates" eyebrow="Academy updates" title="What's happening at The Academy" text="Announcements and notices from the academy.">
         <div className="update-grid">
