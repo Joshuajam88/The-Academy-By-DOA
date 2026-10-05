@@ -8,6 +8,11 @@ npm install
 npm run dev
 ```
 
+## Deploy to GitHub Pages
+Push to the `master` branch to build and deploy the site with GitHub Actions. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The deployed site will be available at `https://joshuajam88.github.io/The-Academy-By-DOA/`.
+
+To enable Supabase sign-up and enrollment on the deployed site, add `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` as Actions variables or secrets in the repository settings. Without them, the site still builds and displays, but Supabase-backed forms are unavailable.
+
 ## Supabase
 Copy `.env.example` to `.env`, add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`, then run `supabase/schema.sql` in Supabase SQL Editor.
 
